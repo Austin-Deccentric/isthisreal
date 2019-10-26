@@ -1,4 +1,4 @@
-from flask import Flask,request, jsonify
+from flask import Flask,request, jsonify, render_template
 import os
 import spacy
 from flask_cors import CORS
@@ -12,6 +12,10 @@ CORS(app)
 
 nlp = spacy.load(model/)
 
+@app.route('/')
+def index():
+    return render_template('index.html')
+
 @app.route('/predict', methods=['POST'])
 def predict():
     test_text = request.json["text"]
@@ -24,4 +28,4 @@ def predict():
         return jsonify({"result": "Model failed"})
 
 if __name__ == '__main__':
-    app.run(threaded=True, port=5000)
+    app.run(debug=True)
