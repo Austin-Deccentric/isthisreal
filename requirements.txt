@@ -4,3 +4,4 @@ spacy==2.2.1
 future==0.17.1
 pickleshare==0.7.5
 plac==0.9.6
+gunicorn===19.9.0
