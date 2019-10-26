@@ -3,14 +3,14 @@ import os
 import spacy
 from flask_cors import CORS
 
-#BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-#MODEL_DIR = os.path.join(BASE_DIR, 'model')
-#input_dir = MODEL_DIR
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_DIR = os.path.join(BASE_DIR, 'model')
+input_dir = MODEL_DIR
 
 app = Flask(__name__)
 CORS(app)
 
-nlp = spacy.load(model/)
+nlp = spacy.load(input_dir)
 
 @app.route('/', methods= ['GET'])
 def index():
