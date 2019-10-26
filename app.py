@@ -26,13 +26,6 @@ def predict():
     except Exception as e:
         print(e)
         return jsonify({"result": "Model failed"})
-    
-@app.route('/<file_name>.txt')
-def send_text_file(file_name):
-    """Send your static text file."""
-    file_dot_text = file_name + '.txt'
-    return app.send_static_file(file_dot_text)
-
 
 @app.after_request
 def add_header(response):
